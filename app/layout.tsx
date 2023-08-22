@@ -1,6 +1,7 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import ModalProvider from "@/providers/modal-providers";
+import ToastProvider from "@/providers/toast-provider";
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import "./globals.css";
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ubuntu.className}>
+        <ToastProvider />
         <ModalProvider />
         <Navbar />
         {children}

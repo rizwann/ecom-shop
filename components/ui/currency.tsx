@@ -15,7 +15,9 @@ const Currency: React.FC<CurrencyProps> = ({ value }) => {
 
   if (!isMounted) return null;
   return (
-    <div className="font-semibold">{priceFormatter.format(Number(value))}</div>
+    <span className="font-semibold">
+      {priceFormatter.format(Number(value))}
+    </span>
   );
 };
 
