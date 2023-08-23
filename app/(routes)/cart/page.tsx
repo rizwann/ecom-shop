@@ -9,6 +9,7 @@ import Summary from "./components/summary";
 const CartPage = () => {
   const [isMounted, setIsMounted] = useState(false);
   const cart = useCart();
+  const cartCount = cart.products.length;
 
   useEffect(() => {
     setIsMounted(true);
@@ -30,7 +31,7 @@ const CartPage = () => {
                 ))}
               </ul>
             </div>
-            <Summary />
+            {cart.products.length > 0 && <Summary />}
           </div>
         </div>
       </Container>
