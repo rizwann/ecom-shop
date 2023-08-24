@@ -6,19 +6,24 @@ import useCart from "@/hooks/use-cart";
 import { Product } from "@/types";
 import { X } from "lucide-react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 interface CartItemProps {
   data: Product;
 }
 const CartItem: React.FC<CartItemProps> = ({ data }) => {
   const cart = useCart();
+  const router = useRouter();
 
   const onRemove = () => {
     cart.removeProduct(data.id);
   };
   return (
     <li className="flex py-6 border-b ">
-      <div className="relative h-24 w-24 rounded-md overflow-hidden sm:h-48 sm:w-48">
+      <div
+        className="relative h-24 w-24 rounded-md overflow-hidden sm:h-48 sm:w-48 cursor-pointer"
+        onClick={() => router.push(`/product/${data.id}`)}
+      >
         <Image
           fill
           src={data?.images?.[0].url}
