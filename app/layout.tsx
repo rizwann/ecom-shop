@@ -14,6 +14,10 @@ const ubuntu = Ubuntu({
 export const metadata: Metadata = {
   title: "MaRc - Store",
   description: "MaRc, an online store for gent's clothing.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
